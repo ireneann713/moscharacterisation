@@ -2,7 +2,7 @@
 
 # CMOS Circuit Design and SPICE Simulation Synopsys Tool
 
-[![CMOS-Workshop-Banner](https://user-images.githubusercontent.com/89193562/133044335-5f27320f-072d-43c9-b02b-f807298c7763.jpg)](https://www.vlsisystemdesign.com/cmos-circuit-design-spice-simulation-using-sky130-technology/)
+
 
 ### **_Brief Description of the course_**
 This is a five-day workshop focused towards CMOS circuit design and SPICE simulation using Synopsys Tool organized by [VLSI System Design]( https://www.vlsisystemdesign.com/). The content of the workshop is divided across the five days in a smart way which allows the learner to grasp all the concepts if the workshop is attended dedicatedly. On the first day of the workshop the emphasis was on the basics of NMOS Drain current (Id), Drain-to-source Voltage (Vds) and the plot between the two of them. The second day focusses primarily on velocity saturation and basics of CMOS inverter VTC and the plots between Id and Vgs and the plot for determining the value of Vt. The third was concentrated on CMOS switching threshold and dynamic simulations, where a lot of equations were derived to find the relationships between the (W/L) ratios of the PMOS and NMOS and the switching threshold voltage (Vm). On the fourth day of the workshop, Noise margins and CMOS inverter robustness with respect to them was discussed. On the fifth and final day of the workshop the emphasis was on Power supply variation and Device variation. In the power supply variation, the effects of using various power supplies on the inverter were observed and we discussed the advantages and disadvantages of using small power supply and the reason that it is not used. In the device variation, the impact of manufacturing processes on a single inverter and inverter chain were discussed.
@@ -175,8 +175,9 @@ Figure 3. The snap shot of the NMOS showing the pinch-off region
 ![spice workflow](https://user-images.githubusercontent.com/89193562/132533155-7affa537-beb3-4aa4-8eab-b4ff3aaab64d.JPG)
 
 -	SPICE netlist for our NMOS
+![Screenshot (353)](https://user-images.githubusercontent.com/55539862/164980915-e6ce264c-4a58-4fea-84bc-36bc9688b5bc.png)
 
-![1631113614117](https://user-images.githubusercontent.com/89193562/132711027-1aa941dc-56bc-4be9-af32-5a96b76d9c09.jpg)
+
 
 Figure 4. The snap shot of SPICE netlist of the above NMOS
 
@@ -204,9 +205,7 @@ Figure 4. The snap shot of SPICE netlist of the above NMOS
     - fs -> Fast-slow corner
 - In the Lab activity, tt corner is used. The corner can be changed by changing the word 'tt' in the line `.lib "sky130_fd_pr/models/sky130.lib.spice" tt` with any valid process corner
 
-![day1 ngspice command](https://user-images.githubusercontent.com/89193562/132533223-85fac5e7-3073-43fc-9d14-a248e9116a2e.JPG)
 
-Figure 5. The snap shot of the terminal window for Day1 activity
 
 
 ![Screenshot (352)](https://user-images.githubusercontent.com/55539862/164980780-3f91f436-8a97-4f13-b7f9-fc054800ccf5.png)
