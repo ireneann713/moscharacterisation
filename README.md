@@ -125,9 +125,7 @@ where,
 
 •	The drift current (Id) = velocity of charge carriers * available charge over the channel width
 
-![1631196789430](https://user-images.githubusercontent.com/89193562/132702310-fe28f367-775f-4e17-b28a-a3716fde099b.jpg)
 
-Figure 2. The snap shot of top view of the MOSFET showing the channel width 'W'
 
 •	Drift current (Id) formula
 
@@ -147,9 +145,6 @@ Figure 2. The snap shot of top view of the MOSFET showing the channel width 'W'
   - When the Pinch-off phenomenon is started, the channel begins to disappear. Basically, the channel starts to disappear only from the Drain side acquiring a triangular shape.
   - When Vgs-Vds<Vt, there is no channel present near the Drain terminal
 
-![1631198852969](https://user-images.githubusercontent.com/89193562/132708164-64f39d56-8289-4af0-96c7-1e8515bc53fe.jpg)
-
-Figure 3. The snap shot of the NMOS showing the pinch-off region
 
   - Id becomes (kn/2).(Vgs-Vt)^2
   - It looks like a perfect current source i.e current is constant. It is not true because effective conductive channel length is modulated by applied Vds.
@@ -172,7 +167,6 @@ Figure 3. The snap shot of the NMOS showing the pinch-off region
 -	SPICE simulation flow diagram
 
 
-![spice workflow](https://user-images.githubusercontent.com/89193562/132533155-7affa537-beb3-4aa4-8eab-b4ff3aaab64d.JPG)
 
 -	SPICE netlist for our NMOS
 ![Screenshot (353)](https://user-images.githubusercontent.com/55539862/164980915-e6ce264c-4a58-4fea-84bc-36bc9688b5bc.png)
@@ -203,15 +197,16 @@ Figure 4. The snap shot of SPICE netlist of the above NMOS
     - ff -> Fast-fast corner
     - ss -> Slow-slow corner
     - fs -> Fast-slow corner
-- In the Lab activity, tt corner is used. The corner can be changed by changing the word 'tt' in the line `.lib "sky130_fd_pr/models/sky130.lib.spice" tt` with any valid process corner
+- In the Lab activity, tt corner is used. 
 
-
-
+![Screenshot (355)](https://user-images.githubusercontent.com/55539862/164989664-ee2bdba9-eee5-447a-9cb7-225deb533324.png)
+Figure 6. The snap shot of the Circuit of the Day1 activity
 
 ![Screenshot (352)](https://user-images.githubusercontent.com/55539862/164980780-3f91f436-8a97-4f13-b7f9-fc054800ccf5.png)
 
 
 Figure 6. The snap shot of the output window of the Day1 activity
+
 
 - To observe the value of Id at any point on the curve, then left click on the point on the curve to be observed.
 - Now on the terminal window, some values of x0 and y0 should appear.
