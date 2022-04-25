@@ -212,3 +212,132 @@ Figure 6. The snap shot of the output window of the Day1 activity
 - Now on the terminal window, some values of x0 and y0 should appear.
 - The value of Id corresponds to the value of y0 in ampere.
 
+# **Day 2: Velocity Saturation and basics of CMOS inverter VTC**
+
+On the second day of the workshop SPICE simulation for lower nodes and the characteristics for long channel and short channel devices were observed. Also, the velocity saturation at lower and higher electric fields and velocity saturation drain current model were observed.
+
+Finally MOSFET as a switch and the characteristics of CMOS inverter were taught.
+
+## **Part 1: SPICE simulation for lower nodes and velocity saturation effect**
+
+### **_What was learnt:_**
+
+•	The distribution of various regions of operation of NMOS over the graph plotted between Ids and Vds.
+
+![regions of operation](https://user-images.githubusercontent.com/89193562/132864852-2f667ae5-a71c-4e67-975a-e4c137843114.png)
+
+Figure 7. The snap shot of various regions of operation of NMOS on graph plotted between Ids and Vds.
+
+- The plot overlapping with the 'x' axis is at Vgs=0V and that is because there is 0 drain current at that point of time and the reason is that when Vgs=0V the nmos is not turned 'ON' so, there is no channel present.
+
+-	The theory about cut-off region of NMOS.
+    - When Vgs<Vt the region of operation of the NMOS is said to be the cut-off region
+    - Cut-off region is a region where the device has been cut-off or it is 'OFF'
+
+-	Short channel effect
+
+-	Velocity Saturation effect
+    - For the lower values of electric field, the velocity tends to be a linear function of the electric field. But, after a certain point (cut-off) the velocity just saturates. This point of saturation is represented by εc (critical electric field)
+    - Vn(m/S) = linear for ε<=εc
+    - Vn(m/S) = constant for ε>=εc
+
+![velocity saturation equation](https://user-images.githubusercontent.com/89193562/132674315-002da47e-65d4-4976-b2c0-b309dee76df7.JPG)
+
+![velocity saturation graph JPG](https://user-images.githubusercontent.com/89193562/132679374-baa32830-fcca-49c3-be54-10b5caf2c5d3.png)
+
+Figure 8. The snap shot of the graph of velocity saturation effect
+
+-	The modes of operation for long channel (>250nm) devices and short channel (<250nm) devices.
+-	The modes of operation for long channel devices are:
+    - Cut-off region
+    - Resistive region
+    - Saturation region
+- The modes of operation for short channel devices are:
+    - Cut-off region
+    - Resistive region
+    - Velocity Saturation region
+    - Saturation region
+ 
+- Let's call (Vgs-Vt)=Vgt
+
+-	The equation of Id for long channel and short channel devices
+
+![Id equation](https://user-images.githubusercontent.com/89193562/132674348-c1e9e289-f766-4750-94f1-eb4cfe5189eb.JPG)
+
+- Vdsat is a technology parameter saturation voltage i.e voltage at which device velocity saturates and is independent of Vgs or Vds
+
+-	The various modes when the value of Vmin is different
+    - When Vgt is the minimum of Vgt, Vds, Vdsat the device is in saturation region.
+    - When Vds is the minimum of Vgt, Vds, Vdsat the device is in resistive region.
+    - When Vdsat is the minimum of Vgt, Vds, Vdsat the device is in velocity saturation region.
+    - It looks like current should increase at lower nodes.
+
+-	Velocity Saturation causes device to saturate early
+
+### **_Lab Activity:_**
+
+For plotting the graph between Ids and Vds for short channel devices we need to write the following SPICE code:
+```
+*Model Description
+.param temp=27
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+*Netlist Description
+XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+R1 n1 in 55
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+*simulation commands
+.op
+.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
+.control
+run
+display
+setplot dc1
+.endc
+.end
+```
+
+![ngspice command window with vgs sweep](https://user-images.githubusercontent.com/89193562/132675164-206b1eeb-8cba-44a8-af4f-bf4322e37550.JPG)
+
+Figure 9. The snap shot of terminal window for plot between Ids and Vds for short channel device
+
+![plot window with vgs sweep](https://user-images.githubusercontent.com/89193562/132675399-e8f69dc7-f222-4e91-81fc-4cb2639213d4.JPG)
+
+Figure 10. The snap shot of output window for plot between Ids and Vds for short channel device
+
+- To observe the value of Id at any point on the curve, then left click on the point on the curve to be observed.
+- Now on the terminal window, some values of x0 and y0 should appear.
+- The value of Id corresponds to the value of y0 in ampere.
+
+To calculate Threshold voltage for Id versus Vgs curve, the following SPICE code is required:
+```
+*Model Description
+.param temp=27
+*Including sky130 library files
+.lib "sky130_fd_pr/models/sky130.lib.spice" tt
+*Netlist Description
+XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
+R1 n1 in 55
+Vdd vdd 0 1.8V
+Vin in 0 1.8V
+*simulation commands
+.op
+.dc Vin 0 1.8 0.1
+.control
+run
+display
+setplot dc1
+.endc
+.end
+```
+
+![ngspice Id vs Vgs curve command window](https://user-images.githubusercontent.com/89193562/132675473-18cd0d22-a956-4c4a-978b-e4837c292d70.JPG)
+
+Figure 11. The snap shot of terminal window for plot between Ids and Vds for short channel device without the sweep for vdd
+
+![plot window Id vs Vgs](https://user-images.githubusercontent.com/89193562/132675655-f779b9be-bcee-4d31-8a62-6204bc0bca40.JPG)
+
+Figure 12. The snap shot of output window for plot between Ids and Vds for short channel device without the sweep for vdd
+
+- In order to calculate the Threshold voltage, the linear part of the plot must be extended. Now, the x intercept of this extended plot gives the value of the threshold voltage of the device that is being simulated.
