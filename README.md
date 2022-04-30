@@ -26,6 +26,19 @@ This is a five-day workshop focused towards CMOS circuit design and SPICE simula
         - [Lab Activity](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#lab-activity-1)
     - [Part 2: CMOS voltage transfer characteristics (VTC)](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#part-2-cmos-voltage-transfer-characteristics-vtc)
         - [What was learnt](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#what-was-learnt-4)
+
+
+- [Day 3: CMOS switching threshold and dynamic simulations](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#day-3-cmos-switching-threshold-and-dynamic-simulations)
+    - [Part 1: Voltage transfer characteristics and SPICE simulations](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#part-1-voltage-transfer-characteristics-and-spice-simulations)
+        - [What was learnt](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#what-was-learnt-5)
+        - [Lab Activity](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#lab-activity-2)
+    - [Part 2: Static Behavior Evaluation - CMOS Inverter Robustness: Switching threshold](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#part-2-static-behavior-evaluation---cmos-inverter-robustness-switching-threshold)
+        - [What was learnt](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#what-was-learnt-6)
+- [Day 4: CMOS Noise Margin Robustness Evaluation](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#day-4-cmos-noise-margin-robustness-evaluation)
+    - [Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Noise Margin](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#part-1-static-behavior-evaluation---cmos-inverter-robustness-noise-margin)
+        - [What was  learn](https://github.com/ireneann713/moscharacterisation/blob/main/README.md#what-was-learnt-7)
+        - [Lab Activity](https://github.com/VrushabhDamle/sky130CircuitDesignWorkshop/blob/main/README.md#lab-activity-3)
+        - 
 # **Day 1: Basics of NMOS Drain Current (Id) vs Drain-to-source Voltage (Vds)**
 
 On the first day the of the workshop, a basic introduction to MOSFETs and SPICE simulations was given. Basic terminologies of MOSFETs and the regions of operation were introduced. A few drain current (Id) equations were derived and the first SPICE simulation was successfully performed. The syntax for the simulation files was also explained and the method to create modules was also taught.
