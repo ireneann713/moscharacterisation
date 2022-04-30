@@ -462,29 +462,8 @@ Figure 20. The snap shot of the output window for plotting the Vtc characteristi
 - Since we are finding Vm, therefore x0 ~ y0 and hence x0=y0=Vm.
 
 
-For performing the transient analysis, the following code is required:
-```
-*Model Description
-.param temp=27
-*Including sky130 library files
-.lib "sky130_fd_pr/models/sky130.lib.spice" tt
-*Netlist Description
-XM1 out in vdd vdd sky130_fd_pr__pfet_01v8 w=0.84 l=0.15
-XM2 out in 0 0 sky130_fd_pr__nfet_01v8 w=0.36 l=0.15
-Cload out 0 50fF
-Vdd vdd 0 1.8V
-Vin in 0 PULSE(0V 1.8V 0 0.1ns 0.1ns 2ns 4ns)
-*simulation commands
-.tran 1n 10n
-.control
-run
-.endc
-.end
-```
 
-![terminal window transient](https://user-images.githubusercontent.com/89193562/132863836-2348a72e-a7e9-4ee3-9d3c-bb5c63d64183.JPG)
 
-Figure 21. The snap shot of the terminal window for performing the transient analysis
 
 ![output window transient](https://user-images.githubusercontent.com/89193562/132863939-9f777f44-e10e-4bc3-a9a2-41e833dd465b.JPG)
 
