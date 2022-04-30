@@ -326,7 +326,7 @@ Figure 12. The snap shot of output window for plot between Ids and Vds for short
 
 -	Defined terminologies in CMOS inverter
 
-![1631186540042](https://user-images.githubusercontent.com/89193562/132681895-fe353e35-c49a-4fcf-a822-640a20898861.jpg)
+![Screenshot (362)](https://user-images.githubusercontent.com/55539862/166095620-366b1f9f-5f85-443d-ba9b-b4c4f8345f30.png)
 
 Figure 13. The snap shot of the circuit diagram of CMOS inverter
 
