@@ -279,28 +279,6 @@ Figure 8. The snap shot of the graph of velocity saturation effect
 
 ### **_Lab Activity:_**
 
-For plotting the graph between Ids and Vds for short channel devices we need to write the following SPICE code:
-```
-*Model Description
-.param temp=27
-*Including sky130 library files
-.lib "sky130_fd_pr/models/sky130.lib.spice" tt
-*Netlist Description
-XM1 Vdd n1 0 0 sky130_fd_pr__nfet_01v8 w=0.39 l=0.15
-R1 n1 in 55
-Vdd vdd 0 1.8V
-Vin in 0 1.8V
-*simulation commands
-.op
-.dc Vdd 0 1.8 0.1 Vin 0 1.8 0.2
-.control
-run
-display
-setplot dc1
-.endc
-.end
-```
-
 
 
 ![Screenshot (356)](https://user-images.githubusercontent.com/55539862/166094579-eb67439a-d866-4316-afb1-ad55f6a10a69.png)
