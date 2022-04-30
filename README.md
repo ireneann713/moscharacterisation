@@ -570,3 +570,21 @@ Therefore,
 
 - When Wp/Lp is increased, the rise delay is isgnificantly reduced because time required for the output capacitor to charge decreases significantly and the reason is the availability of a bigger area to charge the capacitor.
 - Ron(PMOS) ~ 2.5\*Ron(NMOS)
+
+
+
+
+
+# Conclusion and Opinion
+
+During the tenure of the course, I was able to explore MOSFETs and CMOS inverter to a great extent. I learnt about various ways to change the characteristics of an inverter.
+
+# References
+
+- [https://github.com/kunalg123/sky130CircuitDesignWorkshop](https://github.com/kunalg123/sky130CircuitDesignWorkshop)
+- [https://www.vsdiat.com/](https://www.vsdiat.com/)
+- [https://www.vlsisystemdesign.com/](https://www.vlsisystemdesign.com/)
+- [https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- [https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables)
+- [https://github.com/kunalg123/vsdflow](https://github.com/kunalg123/vsdflow)
+- [ttps://github.com/VrushabhDamle/sky130CircuitDesignWorkshop](https://github.com/VrushabhDamle/sky130CircuitDesignWorkshop/blob/main/README.md?plain=1)
