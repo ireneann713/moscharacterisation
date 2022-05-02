@@ -571,6 +571,92 @@ Therefore,
 - When Wp/Lp is increased, the rise delay is isgnificantly reduced because time required for the output capacitor to charge decreases significantly and the reason is the availability of a bigger area to charge the capacitor.
 - Ron(PMOS) ~ 2.5\*Ron(NMOS)
 
+# **Day 4: CMOS Noise Margin Robustness Evaluation**
+
+On the fourth day of the workshop, the robustness of a CMOS inverter in terms of noise margins was demonstrated. We learned the concept of noise margins, the different noise margin ranges and the concepts of Voh, Vih, Vil and Vol. Finally, equations of Noise Margin High (NMh) and Noise Margin Low (NMl) were derived in terms of Voh, Vih, Vil and Vol. During the lab activity, the Noise Margins were found for an inverter with (Wp/Lp) = (2.77).(Wn/Ln)
+
+## **Part 1: Static Behavior Evaluation - CMOS Inverter Robustness: Noise Margin**
+
+### **_What was learnt:_**
+
+- The ideal and actual Input-Output characteristics of an inverter were observed
+
+![1631346101863](https://user-images.githubusercontent.com/89193562/132940629-2c46f46d-d9a6-4c3b-9615-45f88bac7944.jpg)
+
+Figure 23. The snap shot of the ideal Input-Output characteristics of an Inverter
+
+![1631345938506](https://user-images.githubusercontent.com/89193562/132940634-1688436a-cf57-41d7-82d8-70e0512a1154.jpg)
+
+Figure 24. The snap shot of the actual Input-Output characteristics of an Inverter with finite slope
+
+- In the above diagram, the terms stated are explained as follows:
+    - Vil is Input Low Voltage (Vil could be Vdd/4)
+        - Any input voltage level between 0 and Vil will be treated as logic '0'
+    - Voh is Output High Voltage (Vih < Voh <= Vdd)
+        - Any output voltage level between Voh and Vdd will be treated as logic '1'
+    - Vih is Input High Voltage (Vih could be 3.Vdd/4)
+        - Any input voltage level between Vih and Vdd will be treated as logic '1'
+    - Vol is Output Low Voltage (0 <= Vol < Vil)
+        - Any output voltage level between 0 and Vol will be treated as logic '0'
+- Actual Input-Output characteristics on an inverter were observed and they were plotted on a scale
+
+![1631346891597](https://user-images.githubusercontent.com/89193562/132940893-994a25d6-d89f-401f-b98f-868a4f438ef1.jpg)
+
+Figure 25. The snap shot of the actual Input-Output characteristics of an Inverter
+
+![1631346891586](https://user-images.githubusercontent.com/89193562/132940899-e462e34a-643c-4864-9024-73bc997474c1.jpg)
+
+Figure 26. The snap shot of the Input-Output characteristics of an Inverter plotted on a scale
+
+- In the above diagram, the terms stated are explained as follows:
+    - NMh is the Noise Margin High
+        - Any voltage level in "NMh" range will be detected as logic '1'
+    - NMl is the Noise Margin Low
+        - Any voltage level in "NMl" range will be detected as logic '0'
+    - Undefined region
+        - Any signal in "Undefined region" will be an indefinite logic level
+- Noise Margins are the tolerance levels of the noise
+- The equations for NMh and NMl are as follows:
+
+![nmh and nml equations](https://user-images.githubusercontent.com/89193562/132941048-4d1a35eb-24bc-44dd-ba25-5a5abecd73bb.JPG)
+
+- Now with the voltage levels plotted in the noise margin scale, we have prepared a chart that will give the summary of the noise margin:
+
+![1631370670487](https://user-images.githubusercontent.com/89193562/132951411-2ce7e449-b8bb-4e24-90b3-932e3344533d.jpg)
+
+Figure 27. The snap shot of the Noise induced bump characteristics at different noise margin levels
+
+- For any signal to be considered as logic '0' and logic '1', it should be in the NMl and NMh ranges, respectively.
+        - If the height of the bump lies in between Vol and Vil then it's not hazardous because it still lies in the range of logic '0'. Any glitch that occurs in this region is a safe glitch because it will still be considered as logic '0'.
+        - If the height of the bump lies in the "undefined region" then it is potentially hazardous because it can acquire logic '1' which can be fatal. Any glitch in this region is unsafe because it is unclear if it will go to logic '1' or fall to logic '0'.
+        -  If the height of the bump lies in between Vih and Voh then it will definitely be considered as logic '1'. These kinds of glitches are the glitches that need to be fixed.
+- The noise margins of the inverter at different values of Wp/Lp were observed and they were as follows:
+
+|(Wp/Lp)|x.(Wn/Ln)|NMh       |NMl       |Vm   |
+|:---:  |:---:    |:---:     |:---:     |:---:|
+|(Wp/Lp)|1.(Wn/Ln)|0.3       |0.3       |0.99V|
+|(Wp/Lp)|2.(Wn/Ln)|0.35      |0.3       |1.2V |
+|(Wp/Lp)|3.(Wn/Ln)|0.4       |0.3       |1.25V|
+|(Wp/Lp)|4.(Wn/Ln)|0.42      |0.27      |1.35V|
+|(Wp/Lp)|5.(Wn/Ln)|0.42      |0.27      |1.4V |
+
+- A few conclusions can be inferred from the above table:
+        - When `(Wp/Lp) = 2.(Wn/Ln)` there is a rise at the NMh because PMOS is responsible for holding the charges on the capacitance. When the size of PMOS is increased, a low-resistance path from supply to the capacitance is formed and as a result of that, the capacitance is able to retain the charge for a longer amount of time resulting in an increased NMh.
+        - When `(Wp/Lp) = 4.(Wn/Ln)` there is a drop at the NMl because the NMOS has now become weaker than the PMOS
+        - When `(Wp/Lp) = 5.(Wn/Ln)` the NMh almost comes to a static point.
+        - In the above table, NMl is not affected much but NMh has increased by 120mV but this range is still acceptable and this proves the CMOS inverter robustness with respect to the Noise Margin.
+        - Finally, the areas that can be used for digital and analog applications are stated in the figure below:
+
+![1631370670492](https://user-images.githubusercontent.com/89193562/132952201-c0a046b8-1c7e-45f3-bd8e-590efba51f59.jpg)
+
+Figure 28. The snap shot of the Vout versus Vin curve showing the areas that can be used for digital and analog applications
+
+
+
+
+![Screenshot (361)](https://user-images.githubusercontent.com/55539862/166093452-ff8ad3b7-cfab-42a0-a35c-1367d21f2051.png)
+
+Figure 30. The snap shot of the output window for calculating the Noise Margins
 
 
 
